@@ -1,1 +1,8 @@
+# vscode
+.vscode/
+
+# python
+__pycache__/
+
+# data files
 .env

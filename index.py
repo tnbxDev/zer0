@@ -1,6 +1,6 @@
 import asyncio
 
-from zer0_bot import main
+from zer0_bot import run_bot
 
 if __name__ == '__main__':
-    asyncio.run(main())
+    asyncio.run(run_bot())
