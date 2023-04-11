@@ -1,6 +1,7 @@
 from os import getenv
 from dotenv import load_dotenv
 from loguru import logger
+from configparser import ConfigParser
 
 from aiogram import Bot, Dispatcher
 
@@ -22,6 +23,10 @@ dp = Dispatcher()
 
 # registering all needed handlers
 register_handlers(dp)
+
+# read config
+config = ConfigParser()
+config.read("zer0_bot/data/config.ini")
 
 
 async def run_bot() -> None:

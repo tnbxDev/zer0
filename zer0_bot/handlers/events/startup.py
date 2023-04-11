@@ -6,8 +6,9 @@ from aiogram import Bot
 async def startup(bot: Bot) -> None:
     botUser = await bot.me()
 
-    # TODO: create config file
-    lang = "en"
+    # set terminal language
+    from zer0_bot.main import config
+    lang = config["main"]["terminal_language"]
 
     # welcome message
     with open(f'locales/terminal/{lang}.json') as file:
