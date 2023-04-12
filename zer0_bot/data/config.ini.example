@@ -1,0 +1,4 @@
+[main]
+terminal_language=en
+chat_id_for_logs=
+loguru_logger_format=[{time:YYYY-MM-DD HH:mm:ss.SSS}] {name} - line ({line})
