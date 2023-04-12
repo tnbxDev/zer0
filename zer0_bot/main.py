@@ -9,8 +9,12 @@ from zer0_bot.handlers import register_handlers
 from zer0_bot.utils import send_logs
 
 
+# read config
+config = ConfigParser()
+config.read("zer0_bot/data/config.ini")
+
 # configurate logger
-logger.add(send_logs, format='[{time:YYYY-MM-DD HH:mm:ss.SSS}] {name} - line ({line})\n')
+logger.add(send_logs, format=config["main"]["loguru_logger_format"])
 
 # getting token from .env
 load_dotenv(dotenv_path="zer0_bot/data/.env")
@@ -23,10 +27,6 @@ dp = Dispatcher()
 
 # registering all needed handlers
 register_handlers(dp)
-
-# read config
-config = ConfigParser()
-config.read("zer0_bot/data/config.ini")
 
 
 async def run_bot() -> None:
